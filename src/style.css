@@ -29,3 +29,21 @@ body {
 .main.temperature {
     font-size: 3rem;
 }
+
+.days {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    height: 2rem;
+}

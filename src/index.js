@@ -60,14 +60,24 @@ searchForm.addEventListener("submit", async (event) => {
 	// view fetched data
 	mainLocation.textContent = weather.location.at(0).toUpperCase() + weather.location.slice(1);
 	mainTemperature.textContent = `${weather.temperature}°C`;
-	mainDescription.textContent = weather.description; // console.log(weather);
+	mainDescription.textContent = weather.description;
 	mainDate.textContent = weather.datetime;
 
 	mainIcon.src = icons(`./${weather.days[0].icon}.svg`);
 
 	console.log(weather); //
 
-	
+
+	weather.days.map((day, index) => {
+		const icon = document.querySelector(`#day-${index} .icon`)
+		const temperature = document.querySelector(`#day-${index} .temperature`);
+		const datetime = document.querySelector(`#day-${index} .datetime`);
+
+		icon.src = icons(`./${weather.days[index].icon}.svg`);
+		temperature.textContent = `${day.temp}°C`;
+		datetime.textContent = day.datetime;
+
+	})
 
 });
 
