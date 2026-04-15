@@ -16,13 +16,19 @@ body {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    justify-content: center;
     align-items: center;
+
+    > .location {
+        font-size: xx-large;
+    }
+
+    > span {
+        margin: 0;
+    }
 }
 
 .main.icon {
-    height: 7rem;
+    height: 5rem;
     width: auto;
 }
 
@@ -33,7 +39,7 @@ body {
 .days {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 .day {
@@ -42,8 +48,34 @@ body {
     gap: 10px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
+}
+
+.hours {
+    gap: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    overflow: auto;
+    width: 50%;
+
+    
+}
+
+.hour {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .icon {
     height: 2rem;
+}
+
+.display {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }

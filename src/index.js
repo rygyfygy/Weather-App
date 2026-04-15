@@ -61,7 +61,7 @@ searchForm.addEventListener("submit", async (event) => {
 	mainLocation.textContent = weather.location.at(0).toUpperCase() + weather.location.slice(1);
 	mainTemperature.textContent = `${weather.temperature}°C`;
 	mainDescription.textContent = weather.description;
-	mainDate.textContent = weather.datetime;
+	mainDate.textContent = new Date(weather.datetime).toLocaleDateString();
 
 	mainIcon.src = icons(`./${weather.days[0].icon}.svg`);
 
@@ -75,7 +75,37 @@ searchForm.addEventListener("submit", async (event) => {
 
 		icon.src = icons(`./${weather.days[index].icon}.svg`);
 		temperature.textContent = `${day.temp}°C`;
-		datetime.textContent = day.datetime;
+		datetime.textContent = new Date(day.datetime).toLocaleDateString();
+
+	})
+
+	const hours = document.querySelector(".hours");
+
+	
+
+	weather.days[0].hours.map((hourData) => {
+
+		const hour = document.createElement("div");
+		hour.className = "hour";
+
+		const icon = document.createElement("img");
+		icon.src = icons(`./${hourData.icon}.svg`);
+		icon.className = "icon";
+		hour.appendChild(icon);
+
+		const temperature = document.createElement("div");
+		temperature.textContent = `${hourData.temp}°C`;
+		temperature.className = "temperature";
+		hour.appendChild(temperature);
+		
+		const datetime = document.createElement("div");
+		datetime.className = "datetime;"
+		const time = Temporal.PlainTime.from(hourData.datetime);
+		datetime.textContent = `${String(time.hour).padStart(2, "0")}:${String(time.minute).padStart(2, "0")}`;
+			
+		hour.appendChild(datetime);
+
+		hours.appendChild(hour);
 
 	})
 
