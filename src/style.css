@@ -79,3 +79,14 @@ body {
     flex-flow: column;
     align-items: center;
 }
+
+#loading {
+    background-color: white;
+    padding: 50vh 50vh 50vh 50vh;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    left: 23%;
+    top: 0;
+    font-size: xx-large;
+}
