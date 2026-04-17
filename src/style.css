@@ -78,6 +78,7 @@ body {
     display: flex;
     flex-flow: column;
     align-items: center;
+    gap: 15px;
 }
 
 #loading {
